@@ -3,9 +3,9 @@
 
 function logger(request, response, next){
     console.log(`${request.method} :: ${request.url}`);
-    if (request.method === 'POST'){
-        next('We not ready yet for post')
-    }
+    // if (request.method === 'POST'){
+    //     next('We not ready yet for post')
+    // }
     next();
 }
 
