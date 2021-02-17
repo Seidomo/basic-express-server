@@ -1,13 +1,11 @@
 'use strict';
 
-function errorNotFound (error, request, response, next){
-    const error = error.message ? error.message : error;
-    const errorServer ={
-        status : 500,
-        message : 'Server Error'
-    }
-    response.status(errorServer.status);
+function errorNotFound (err, request, response, next){
+    const error = err.message ? err.message : err;
+    console.log(error);
+
+    response.status(500).send(error);
 
 }
 
-module.exports = errorServer;
+module.exports = errorNotFound;

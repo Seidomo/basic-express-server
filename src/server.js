@@ -4,15 +4,25 @@ const express = require('express');
 const app = express();
 const serverError = require('./error-handlers/500.js');
 const errNotFound = require('./error-handlers/404.js');
-const logger = rquire('./middleware/logger.js');
+const logger = require('./middleware/logger.js');
+const validator = require('./middleware/validator.js');
 
 
 
-app.get('/person', validator, getPerson);
+app.get('/person', logger, validator, getPerson);
 
+
+function getPerson(request, response, next){
+     let jsonObj = {name: request.query.name }
+    
+    
+    response.json(jsonObj);
+
+}
+
+
+app.use(errNotFound);
 app.use(serverError);
-function getPerson()
-
 
 
 module.exports = {
