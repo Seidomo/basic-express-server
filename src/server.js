@@ -13,10 +13,10 @@ app.get('/person', logger, validator, getPerson);
 
 
 function getPerson(request, response, next){
-     let jsonObj = {name: request.query.name }
+  let jsonObj = {name: request.query.name };
     
     
-    response.json(jsonObj);
+  response.json(jsonObj);
 
 }
 
@@ -26,14 +26,14 @@ app.use(serverError);
 
 
 module.exports = {
-    app: app,
-    start : function (port){
-        app.listen(port, ()=>{
-            console.log('app is listening on port ::' + port);
-        })
-    }
+  app: app,
+  start : function (port){
+    app.listen(port, ()=>{
+      console.log('app is listening on port ::' + port);
+    });
+  },
 
-}
+};
 
 
 
