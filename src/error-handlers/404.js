@@ -1,9 +1,9 @@
 'use strict';
 
 
- function errorNotFound ( request, response, next){
+function errorNotFound ( request, response, next){
     
-    response.status(404).send(' route not found');
+  response.status(404).send(' route not found');
 
 }
 
